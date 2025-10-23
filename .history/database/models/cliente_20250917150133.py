@@ -1,0 +1,12 @@
+from peewee import CharField, Model, DateField
+from database.database import db
+import
+
+
+class Cliente(Model):
+    name = CharField()
+    email = CharField()
+    data_registro= DateTimeField(default=datetime.datetime.now)
+
+    class Meta:
+        database = db

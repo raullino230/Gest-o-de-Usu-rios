@@ -1,0 +1,30 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for cliente in clientes %}
+
+
+        <tr>
+          <th scope="row">{{ cliente.id }}</th>
+          <td>{{ cliente.nome }}</td>
+          <td>{{ cliente.email }}</td>
+          <td>
+            <a href="#" class="btn btn-info" onclick="abrirModalCliente('{{ cliente.id }}', '{{ cliente.nome }}', '{{ cliente.email }}')">Ver</a>
+            <a href="/{{ cliente.id }}/edit" class="btn btn-primary">Editar</a>
+            <form action="/{{ cliente.id }}/delete" method="POST" style="display:inline;">
+              <button type="submit" class="btn btn-danger">Deletar</button>
+            </form>
+          </td>
+        </tr>
+   {% endfor %}
+   
+  </tbody>
+</table>

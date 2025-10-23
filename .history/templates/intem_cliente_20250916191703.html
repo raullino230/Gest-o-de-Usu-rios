@@ -1,0 +1,19 @@
+<tr>
+          <th scope="row">{{ cliente.id }}</th>
+          <td>{{ cliente.nome }}</td>
+          <td>{{ cliente.email }}</td>
+          <td>
+
+           <button class="btn btn-secondary" c-get="{{ url_for('cliente.detalhe_cliente', cliente_id=cliente.id) }}" c-target="#exibir-cliente"  >
+            ver
+           </button>
+
+
+            <a href="{{ url_for('cliente.form_edit_cliente', cliente_id=cliente.id) }}" class="btn btn-primary">Editar</a>
+            <form action="/{{ cliente.id }}/delete" method="POST" style="display:inline;">
+
+               
+            <button type="submit" class="btn btn-danger">Deletar</button>
+            </form>
+          </td>
+        </tr>

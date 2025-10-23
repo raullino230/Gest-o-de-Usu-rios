@@ -1,0 +1,17 @@
+from routes.home import home_route
+from routes.cliente import cliente_route 
+from database
+
+
+def configure_all(app):
+    configure_routes(app)
+
+
+def configure_routes(app):
+    app.register_blueprint(home_route)
+    app.register_blueprint(cliente_route)
+
+
+def configure_db():
+    db.connect()
+    db.create_tables([Cliente])

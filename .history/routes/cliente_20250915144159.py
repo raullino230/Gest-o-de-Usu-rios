@@ -1,0 +1,7 @@
+from flask import Blueprint
+
+cliente_route = Blueprint('cliente', __name__)
+
+@cliente_route_route.route('/')
+def home():
+    return render_template('index.html')
