@@ -16,5 +16,5 @@ if os.environ.get('REMOVE_DB') in ('1', 'true', 'True'):
 
 configure_all(app)
 
-
-app.run(debug=True)
+if __name__ == "__main__":
+	app.run(debug=True)
